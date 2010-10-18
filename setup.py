@@ -8,5 +8,5 @@ setup(name='frinat-www',
       author='Jonathan Stoppani',
       author_email='jonathan.stoppani@gmail.com',
       url='http://github.com/garetjax/frinat-www',
-      packages=[],
+      packages=['frinat'],
      )
