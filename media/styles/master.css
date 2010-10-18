@@ -464,7 +464,7 @@ body > footer {
 body > footer {
   display: block;
 }
-/* line 8, ../../assets/sass/_footer.sass */
+/* line 9, ../../assets/sass/_footer.sass */
 body > footer > div {
   display: inline;
   float: right;
@@ -491,7 +491,7 @@ body > footer > div {
   padding: 15px 0;
   height: 200px;
 }
-/* line 17, ../../assets/sass/_footer.sass */
+/* line 18, ../../assets/sass/_footer.sass */
 body > footer > div > div {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -503,14 +503,14 @@ body > footer > div > div {
   float: left;
   padding: 0 10px 0 50px;
 }
-/* line 25, ../../assets/sass/_footer.sass */
+/* line 26, ../../assets/sass/_footer.sass */
 body > footer > div > div h1 {
   font-size: 1.1em;
   font-weight: bold;
   padding: 0.6em 0;
   color: rgba(128, 148, 169, 0.57);
 }
-/* line 31, ../../assets/sass/_footer.sass */
+/* line 32, ../../assets/sass/_footer.sass */
 body > footer > div > div ul {
   margin-left: 0;
   margin: 0.4em 0 0 -19px;
@@ -521,35 +521,35 @@ body > footer > div > div ul li {
   background: url('../images/../images/star-bullet.png?1265237542') no-repeat 3px 6.5px;
   list-style-type: none;
 }
-/* line 35, ../../assets/sass/_footer.sass */
+/* line 36, ../../assets/sass/_footer.sass */
 body > footer > div > div ul li {
   padding: 0.2em 0 0.2em 19px;
 }
-/* line 39, ../../assets/sass/_footer.sass */
+/* line 40, ../../assets/sass/_footer.sass */
 body > footer > div > div li a {
   color: white;
   text-decoration: none;
   line-height: 1.5em;
   display: block;
 }
-/* line 45, ../../assets/sass/_footer.sass */
+/* line 46, ../../assets/sass/_footer.sass */
 body > footer > div > div li a:hover {
   text-decoration: underline;
 }
-/* line 49, ../../assets/sass/_footer.sass */
+/* line 50, ../../assets/sass/_footer.sass */
 body > footer > div > div + div + div {
-  width: 490px;
+  width: 470px;
   padding: 0;
   border: 0;
 }
-/* line 54, ../../assets/sass/_footer.sass */
+/* line 55, ../../assets/sass/_footer.sass */
 body > footer > div > div + div + div img {
   float: left;
   width: 172px;
   padding: 40px 0 35px 35px;
   opacity: 0.7;
 }
-/* line 60, ../../assets/sass/_footer.sass */
+/* line 61, ../../assets/sass/_footer.sass */
 body > footer > div > div + div + div address {
   width: 125px;
   float: right;
@@ -558,7 +558,7 @@ body > footer > div > div + div + div address {
   line-height: 1.8em;
   padding: 35px 15px 35px 0;
 }
-/* line 68, ../../assets/sass/_footer.sass */
+/* line 69, ../../assets/sass/_footer.sass */
 body > footer > div > div + div + div p {
   color: rgba(255, 255, 255, 0.2);
   padding-top: 10px;
@@ -618,87 +618,96 @@ body > section > section h1 a:after, body > section > section h2 a:after, body >
   visibility: hidden;
 }
 /* line 45, ../../assets/sass/_body.sass */
+body > section > section h1 a:hover, body > section > section h2 a:hover, body > section > section h3 a:hover, body > section > section h4 a:hover, body > section > section h5 a:hover, body > section > section h6 a:hover {
+  background: none;
+}
+/* line 48, ../../assets/sass/_body.sass */
 body > section > section h1 a:hover:after, body > section > section h2 a:hover:after, body > section > section h3 a:hover:after, body > section > section h4 a:hover:after, body > section > section h5 a:hover:after, body > section > section h6 a:hover:after {
   visibility: visible;
 }
-/* line 48, ../../assets/sass/_body.sass */
+/* line 51, ../../assets/sass/_body.sass */
 body > section > section hr {
   border: 0;
   height: 1px;
   background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0%, #ffffff), color-stop(15%, #cccccc), color-stop(85%, #cccccc), color-stop(100%, #ffffff));
   background-image: -moz-linear-gradient(left, #ffffff 0%, #cccccc 15%, #cccccc 85%, #ffffff 100%);
 }
-/* line 53, ../../assets/sass/_body.sass */
+/* line 56, ../../assets/sass/_body.sass */
 body > section > section a {
   color: #094a93;
 }
 /* line 59, ../../assets/sass/_body.sass */
+body > section > section a:hover {
+  background: #ffffa9;
+}
+/* line 65, ../../assets/sass/_body.sass */
 body > section > section p {
   margin: 1.5em 0;
 }
-/* line 62, ../../assets/sass/_body.sass */
+/* line 68, ../../assets/sass/_body.sass */
 body > section > section img {
   max-width: 100%;
 }
-/* line 65, ../../assets/sass/_body.sass */
+/* line 71, ../../assets/sass/_body.sass */
 body > section > section strong {
   font-weight: bold;
 }
-/* line 68, ../../assets/sass/_body.sass */
+/* line 74, ../../assets/sass/_body.sass */
 body > section > section ul, body > section > section ol {
   margin: 1.5em 0;
 }
-/* line 71, ../../assets/sass/_body.sass */
+/* line 77, ../../assets/sass/_body.sass */
 body > section > section ul li {
   list-style-type: disc;
 }
-/* line 74, ../../assets/sass/_body.sass */
+/* line 80, ../../assets/sass/_body.sass */
 body > section > section ol li {
   list-style-type: decimal-leading-zero;
 }
-/* line 77, ../../assets/sass/_body.sass */
+/* line 83, ../../assets/sass/_body.sass */
 body > section > section table {
   border: 1px solid #eeeeee;
   padding: 2px;
   margin: 1em -14px;
 }
-/* line 82, ../../assets/sass/_body.sass */
+/* line 88, ../../assets/sass/_body.sass */
 body > section > section table caption {
   padding: 0 13px 4px 14px;
   font-weight: bold;
 }
-/* line 86, ../../assets/sass/_body.sass */
+/* line 92, ../../assets/sass/_body.sass */
 body > section > section .plugin_googlemap > div {
   height: 300px;
 }
-/* line 89, ../../assets/sass/_body.sass */
+/* line 95, ../../assets/sass/_body.sass */
 body > section > section td, body > section > section th {
   border: 1px solid #cccccc;
   border-left-width: 0;
   border-top-width: 0;
   padding: 5px 10px;
 }
-/* line 95, ../../assets/sass/_body.sass */
+/* line 101, ../../assets/sass/_body.sass */
 body > section > section td:first-child, body > section > section th:first-child {
   border-left-width: 1px;
 }
-/* line 99, ../../assets/sass/_body.sass */
+/* line 105, ../../assets/sass/_body.sass */
 body > section > section tr:first-child th, body > section > section tr:first-child td {
   border-top-width: 1px;
 }
 
-/* line 5, ../../assets/sass/_calendar.sass */
-#calendar table td ul li.calendar-1 {
+/* line 4, ../../assets/sass/_calendar.sass */
+table.calendar td ul li.calendar-1 {
   background: red;
 }
-/* line 10, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul {
+
+/* line 9, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul {
   display: inline-block;
   font-size: 1.2em;
   width: 100%;
 }
 /* line 25, ../../../../../.gem/ruby/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-#calendar section > section nav ul:after {
+section > section nav.calendar-nav ul:after {
   content: " ";
   display: block;
   height: 0;
@@ -707,11 +716,11 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   visibility: hidden;
 }
 /* line 8, ../../../../../.gem/ruby/1.8/gems/compass-0.10.2/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#calendar section > section nav ul {
+section > section nav.calendar-nav ul {
   display: block;
 }
-/* line 15, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul li {
+/* line 14, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul li {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -721,8 +730,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   width: 50%;
   text-align: right;
 }
-/* line 22, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul a {
+/* line 21, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul a {
   color: #0e3a78;
   text-decoration: none;
   display: inline-block;
@@ -730,23 +739,23 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   border-bottom: 1px solid transparent;
   margin-right: 8%;
 }
-/* line 30, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul a:hover {
+/* line 29, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul a:hover {
   border-bottom: 1px solid #40669c;
   background: #fcffd7;
 }
-/* line 34, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul li + li {
+/* line 33, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul li + li {
   text-align: left;
   padding-right: 0;
 }
-/* line 38, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul li + li a {
+/* line 37, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul li + li a {
   margin-right: 0;
   margin-left: 4%;
 }
-/* line 42, ../../assets/sass/_calendar.sass */
-#calendar section > section nav ul li + li:before {
+/* line 41, ../../assets/sass/_calendar.sass */
+section > section nav.calendar-nav ul li + li:before {
   content: "♦";
   color: #cccccc;
   width: 8%;
@@ -754,8 +763,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   text-align: center;
   display: inline-block;
 }
-/* line 50, ../../assets/sass/_calendar.sass */
-#calendar table {
+/* line 49, ../../assets/sass/_calendar.sass */
+section > section table.calendar {
   width: 828px;
   position: relative;
   -moz-border-radius: 7px;
@@ -766,8 +775,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   border-radius: 7px;
   margin-top: 30px;
 }
-/* line 56, ../../assets/sass/_calendar.sass */
-#calendar table tr:first-child td:first-child {
+/* line 55, ../../assets/sass/_calendar.sass */
+section > section table.calendar tr:first-child td:first-child {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   -o-border-top-left-radius: 4px;
@@ -775,8 +784,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   -khtml-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 59, ../../assets/sass/_calendar.sass */
-#calendar table tr:first-child td:last-child {
+/* line 58, ../../assets/sass/_calendar.sass */
+section > section table.calendar tr:first-child td:last-child {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   -o-border-top-right-radius: 4px;
@@ -784,8 +793,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   -khtml-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-/* line 62, ../../assets/sass/_calendar.sass */
-#calendar table tr:last-child td:first-child {
+/* line 61, ../../assets/sass/_calendar.sass */
+section > section table.calendar tr:last-child td:first-child {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -o-border-bottom-left-radius: 4px;
@@ -793,8 +802,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   -khtml-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-/* line 65, ../../assets/sass/_calendar.sass */
-#calendar table tr:last-child td:last-child {
+/* line 64, ../../assets/sass/_calendar.sass */
+section > section table.calendar tr:last-child td:last-child {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   -o-border-bottom-right-radius: 4px;
@@ -802,26 +811,26 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 68, ../../assets/sass/_calendar.sass */
-#calendar table td.empty {
+/* line 67, ../../assets/sass/_calendar.sass */
+section > section table.calendar td.empty {
   background: #f6f6f6;
 }
-/* line 70, ../../assets/sass/_calendar.sass */
-#calendar table td.empty span {
+/* line 69, ../../assets/sass/_calendar.sass */
+section > section table.calendar td.empty span {
   color: #cccccc;
 }
-/* line 73, ../../assets/sass/_calendar.sass */
-#calendar table thead {
+/* line 72, ../../assets/sass/_calendar.sass */
+section > section table.calendar thead {
   width: 822px;
   position: absolute;
   top: -18px;
 }
-/* line 78, ../../assets/sass/_calendar.sass */
-#calendar table thead tr {
+/* line 77, ../../assets/sass/_calendar.sass */
+section > section table.calendar thead tr {
   display: table-row;
 }
-/* line 81, ../../assets/sass/_calendar.sass */
-#calendar table th {
+/* line 80, ../../assets/sass/_calendar.sass */
+section > section table.calendar th {
   border: 0;
   color: #999999;
   text-align: center;
@@ -829,8 +838,8 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   padding: 0;
   width: 822px;
 }
-/* line 89, ../../assets/sass/_calendar.sass */
-#calendar table td {
+/* line 88, ../../assets/sass/_calendar.sass */
+section > section table.calendar td {
   height: 90px;
   width: 14.285%;
   vertical-align: top;
@@ -838,44 +847,44 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   overflow: hidden;
   position: relative;
 }
-/* line 97, ../../assets/sass/_calendar.sass */
-#calendar table td:hover {
+/* line 96, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:hover {
   overflow: visible;
 }
-/* line 100, ../../assets/sass/_calendar.sass */
-#calendar table td > span {
+/* line 99, ../../assets/sass/_calendar.sass */
+section > section table.calendar td > span {
   display: block;
   color: #666666;
 }
-/* line 104, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover {
+/* line 103, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover {
   background: #fcffd7;
 }
-/* line 107, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover:hover ul {
+/* line 106, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover:hover ul {
   width: auto;
   max-height: 1000px;
   min-width: 104px;
   z-index: 1000;
 }
-/* line 113, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover:hover ul span {
+/* line 112, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover:hover ul span {
   display: inline;
 }
-/* line 116, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover:hover ul li:nth-child(3) {
+/* line 115, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover:hover ul li:nth-child(3) {
   display: none;
 }
-/* line 119, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover:hover ul li:last-child {
+/* line 118, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover:hover ul li:last-child {
   display: block;
 }
-/* line 122, ../../assets/sass/_calendar.sass */
-#calendar table td:not(.empty):hover:hover ul li:nth-child(n+4) {
+/* line 121, ../../assets/sass/_calendar.sass */
+section > section table.calendar td:not(.empty):hover:hover ul li:nth-child(n+4) {
   display: block;
 }
-/* line 125, ../../assets/sass/_calendar.sass */
-#calendar table ul {
+/* line 124, ../../assets/sass/_calendar.sass */
+section > section table.calendar ul {
   max-height: 70px;
   overflow-y: hidden;
   margin: 0 -5px;
@@ -889,27 +898,28 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 134, ../../assets/sass/_calendar.sass */
-#calendar table ul li {
+/* line 133, ../../assets/sass/_calendar.sass */
+section > section table.calendar ul li {
   background: #154b84;
   line-height: 1.4em;
   white-space: nowrap;
   padding: 0 5px;
 }
-/* line 143, ../../assets/sass/_calendar.sass */
-#calendar table ul li a {
+/* line 142, ../../assets/sass/_calendar.sass */
+section > section table.calendar ul li a {
   color: white;
   display: block;
   overflow: hidden;
   text-decoration: none;
   padding: 3px 0px;
 }
-/* line 150, ../../assets/sass/_calendar.sass */
-#calendar table ul li a:hover {
+/* line 149, ../../assets/sass/_calendar.sass */
+section > section table.calendar ul li a:hover {
   text-decoration: underline;
+  background: inherit;
 }
 /* line 153, ../../assets/sass/_calendar.sass */
-#calendar table ul li:first-child {
+section > section table.calendar ul li:first-child {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   -o-border-top-left-radius: 3px;
@@ -924,7 +934,7 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   border-top-right-radius: 3px;
 }
 /* line 156, ../../assets/sass/_calendar.sass */
-#calendar table ul li:last-child, #calendar table ul li:nth-child(3) {
+section > section table.calendar ul li:last-child, section > section table.calendar ul li:nth-child(3) {
   -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   -o-border-bottom-left-radius: 3px;
@@ -939,15 +949,15 @@ body > section > section tr:first-child th, body > section > section tr:first-ch
   border-bottom-right-radius: 3px;
 }
 /* line 160, ../../assets/sass/_calendar.sass */
-#calendar table ul li + li {
+section > section table.calendar ul li + li {
   border-top: 1px solid #306189;
 }
 /* line 163, ../../assets/sass/_calendar.sass */
-#calendar table ul li:nth-child(n+4) {
+section > section table.calendar ul li:nth-child(n+4) {
   display: none;
 }
 /* line 166, ../../assets/sass/_calendar.sass */
-#calendar table ul li.more {
+section > section table.calendar ul li.more {
   text-align: center;
   padding-top: 0;
   color: rgba(255, 255, 255, 0.6);

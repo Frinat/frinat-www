@@ -1,0 +1,6 @@
+<h1>{{ title }}</h1>
+<ul id="sponsors">
+	{% for sponsor in sponsors %}
+	<li><a href="{{ sponsor.url }}"><img src="{{ sponsor.logo.url }}" /></a></li>
+	{% endfor %}
+</ul>

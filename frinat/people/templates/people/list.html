@@ -1,0 +1,8 @@
+<ul>
+{% for p in people %}
+	<li>
+		<img src="{{ p.photo.url }}" />
+		{{ p }}
+	</li>
+{% endfor %}
+</ul>

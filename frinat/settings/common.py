@@ -110,9 +110,12 @@ INSTALLED_APPS = (
     'cms.plugins.googlemap',
     'mptt',
     'publisher',
-    #'schedule',
-    #'articles',
-    #'calendars',
+    
+    'schedule',
+    'frinat.sponsors',
+    'frinat.calendar',
+    'frinat.people',
+    
     #'filebrowser',
 )
 
@@ -149,8 +152,28 @@ CMS_CONTENT_CACHE_DURATION = 1
 # Django-schedule configuration
 FIRST_DAY_OF_WEEK = 1 # Monday
 
-TINYMCE_JS_URL = os.path.join(MEDIA_URL, 'scripts', 'tiny_mce', 'tiny_mce.js')
-TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'scripts', 'tiny_mce')
+#TINYMCE_JS_URL = os.path.join(MEDIA_URL, 'scripts', 'tiny_mce', 'tiny_mce.js')
+#TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'scripts', 'tiny_mce')
+
+
+CMS_PLACEHOLDER_CONF = {
+    'content': {
+        'plugins': (
+            'TextPlugin', 'PicturePlugin', 'FilePlugin', 'SnippetPlugin',
+            'LinkPlugin', 'MapPlugin', 'CMSCalendarMonthPlugin',
+            'CMSLatestEntriesPlugin', 'CMSSelectedEntriesPlugin',
+            'CMSSelectedPeoplePlugin', 'CMSPeopleGroupPlugin'
+        ),
+        #'extra_context': {"theme":"wide"},
+        #'name':gettext("Content")
+    },
+    'sidebar': {
+        "plugins": ('CMSRandomSponsorPlugin', 'CMSSpecificSponsorPlugin'),
+        #"extra_context": {"theme":"small"},
+        #'name':gettext("Right Column")
+    },
+}
+
 
 TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
