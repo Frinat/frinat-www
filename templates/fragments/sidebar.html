@@ -1,0 +1,23 @@
+{% load cms_tags menu_tags %}
+
+{% block sidebar %}
+		<aside>
+			<h1>{% show_breadcrumb 0 "cms/top_ancestor.html" %}</h1>
+			{% block subnavigation %}
+			<nav>
+				<ul id="submenu">
+					{% show_menu 1 2 0 1 %}
+				</ul>
+			</nav>
+			{% endblock subnavigation %}
+	
+			{% block sidebar_widgets %}
+			<h1>Nos sponsors</h1>
+			<ul id="sponsors">
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/ubs.png" /></a></li>
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/groupe-e.png" /></a></li>
+				<li><a href="#"><img src="{{ MEDIA_URL }}images/arena.png" /></a></li>
+			</ul>
+			{% endblock sidebar_widgets %}
+		</aside>
+{% endblock sidebar %}

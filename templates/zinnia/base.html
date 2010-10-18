@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load zinnia_tags tagging_tags i18n %}
+{% tags_for_model zinnia.entry as tag_entry %}
+
+{% block meta %}
+	<meta name="language" content="{{ LANGUAGE_CODE }}" />
+	<meta name="description" content="{% block meta-description %}{% endblock %}" />
+	<meta name="keywords" content="{{ tag_entry|join:", "}}, {% block meta-keywords %}{% endblock %}" />
+{% endblock %}
+
+{% block links %}
+	{% get_archives_entries "zinnia/tags/archives_entries_link.html" %}
+	<link rel="pingback" href="/xmlrpc/" />
+	<link rel="EditURI" type="application/rsd+xml" href="{% url zinnia_rsd %}" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% url zinnia_wlwmanifest %}" />
+	<link rel="alternate" type="application/rss+xml" title="{% trans "RSS Feed of latest entries" %}" href="{% url zinnia_entry_latest_feed %}" />
+{% endblock %}
+
+{% block stylesheets %}
+	{{ block.super }}
+	<link rel="stylesheet" href="{{ MEDIA_URL }}styles/blog.css" type="text/css" />
+{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block main %}
+<!--
+
+<meta name="robots" content="follow, all" />
+<meta name="author" content="Fantomas42" />
+
+<a href="{% url zinnia_sitemap %}" title="{% trans "Sitemap" %}" class="sitemap">{% trans "Sitemap" %}</a>
+<a href="{% url zinnia_entry_latest_feed %}" title="{% trans "RSS Feed of latest entries" %}" class="link feeds">{% trans "RSS Feed" %}</a>
+<a href="{% url zinnia_entry_archive_index %}" title="Zinnia's Blog" rel="home"></a>
+
+-->
+	{% block zinnia_content %}{% endblock %}
+{% endblock %}
+
+{% block sidebar_widgets %}
+	{% block zinnia_sidebar %}{% endblock %}
+{% endblock %}

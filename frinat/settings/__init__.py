@@ -1,0 +1,1 @@
+from frinat.settings.development import *

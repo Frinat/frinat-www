@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+
+{% block title %}{{ block.super }}{% endblock %}
+
+{% block main %}
+	<section>
+		{% placeholder "content" %}
+	</section>
+{% endblock main %}
+
+{% block sidebar_widgets %}
+	{% placeholder "sidebar" %}
+{% endblock sidebar_widgets %}
