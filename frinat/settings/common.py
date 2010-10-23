@@ -99,7 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.syndication',
     'django.contrib.comments',
     'south',
-    #'tinymce',
+    'tinymce',
     'cms',
     'menus',
     'cms.plugins.text',
@@ -139,7 +139,7 @@ CMS_TEMPLATES = (
     ('left-sidebar.html', gettext('Left sidebar')),
     ('full.html', gettext('Full width (no sidebar)')),
     ('index.html', gettext('Homepage template')),
-    #('calendar.html', gettext('Calendar month')),
+    #('calendar/month.html', gettext('Calendar month')),
 )
 
 CMS_PAGE_MEDIA_PATH = 'assets/cms/'
@@ -152,8 +152,8 @@ CMS_CONTENT_CACHE_DURATION = 1
 # Django-schedule configuration
 FIRST_DAY_OF_WEEK = 1 # Monday
 
-#TINYMCE_JS_URL = os.path.join(MEDIA_URL, 'scripts', 'tiny_mce', 'tiny_mce.js')
-#TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'scripts', 'tiny_mce')
+TINYMCE_JS_URL = os.path.join(MEDIA_URL, 'scripts', 'tiny_mce', 'tiny_mce.js')
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'scripts', 'tiny_mce')
 
 
 CMS_PLACEHOLDER_CONF = {

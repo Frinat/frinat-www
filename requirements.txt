@@ -7,3 +7,4 @@ south
 -e git+git://github.com/divio/django-cms.git#egg=django-cms
 git+git://github.com/Frinat/django-blog-zinnia.git#django-blog-zinnia
 git+git://github.com/Frinat/django-schedule.git#egg=django-schedule
+django-tinymce==1.5.1.dev100
