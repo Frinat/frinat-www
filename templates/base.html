@@ -96,12 +96,12 @@
 			<div>
 				<h1>Sections</h1>
 				<ul>
-					<li><a href="#">Natation</a></li>
-					<li><a href="#">Plongeon</a></li>
-					<li><a href="#">Waterpolo</a></li>
-					<li><a href="#">Sauvetage</a></li>
-					<li><a href="#">Plongee</a></li>
-					<li><a href="#">Triathlon</a></li>
+					<li><a href="{% page_id_url "natation" %}">Natation</a></li>
+					<li><a href="{% page_id_url "plongee" %}">Plongee</a></li>
+					<li><a href="{% page_id_url "plongeon" %}">Plongeon</a></li>
+					<li><a href="{% page_id_url "sauvetage" %}">Sauvetage</a></li>
+					<li><a href="{% page_id_url "triathlon" %}">Triathlon</a></li>
+					<li><a href="{% page_id_url "waterpolo" %}">Waterpolo</a></li>
 				</ul>
 			</div>
 		
@@ -109,9 +109,9 @@
 				<h1>Autres pages</h1>
 				<ul>
 					<li><a href="#">News</a></li>
-					<li><a href="#">Présentation</a></li>
+					<li><a href="{% page_id_url "presentation" %}">Présentation</a></li>
 					<li><a href="#">Marketing</a></li>
-					<li><a href="#">Contacts</a></li>
+					<li><a href="{% page_id_url "contact" %}">Contacts</a></li>
 					<li><a href="#">Sponsors</a></li>
 					<li><a href="#">Liens</a></li>
 				</ul>
