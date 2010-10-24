@@ -1,12 +1,13 @@
+from cms.sitemaps import CMSSitemap
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^news/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
 )
 
@@ -32,3 +33,4 @@ if settings.DEBUG:
 urlpatterns += patterns('',
     url(r'^', include('cms.urls')),
 )
+
