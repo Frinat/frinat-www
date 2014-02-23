@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'django.contrib.humanize',
     'django.contrib.syndication',
+    'django.contrib.sitemaps',
     'django.contrib.comments',
     'south',
     'tinymce',
