@@ -13,7 +13,7 @@ def runcmd(*args):
     database = 'postgres://{}:{}@fribourg-natation.ch/{}'.format(env.webfaction_db_user, env.webfaction_db_pwd, env.webfaction_db_name)
     database = 'postgres://frinat:frinat12345@localhost/frinat'
 
-    with shell_env(DATABASE_URL=database, DJANGO_DEBUG='no'):
+    with shell_env(DATABASE_URL=database, DJANGO_DEBUG='yes'):
         local('./manage.py {}'.format(' '.join(args)))
 
 
