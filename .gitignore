@@ -29,3 +29,4 @@ docs/_build
 # Generated static files (if any)
 /frinat/static/styles
 /frinat/static/scripts/master.js
+/_dev
