@@ -1,0 +1,8 @@
+/* line 2, ../../assets/sass/blog.sass */
+body > section > section .entry-authors {
+  display: inline;
+}
+/* line 5, ../../assets/sass/blog.sass */
+body > section > section .entry-authors li {
+  display: inline;
+}

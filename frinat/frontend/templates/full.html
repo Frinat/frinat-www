@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+
+{% block title %}{{ block.super }}{% endblock %}
+
+{% block main %}
+	<section>
+		{% placeholder "content" %}
+	</section>
+{% endblock main %}
+
+{% block bodyclasses %}{{ block.super }} full{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
