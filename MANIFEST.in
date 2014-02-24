@@ -1,7 +1,12 @@
-include README AUTHORS NEWS LICENSE
+include README AUTHORS NEWS LICENSE CONTRIBUTING.rst
+
+exclude tox.ini .coveragerc fabfile.py requirements-dev.txt
+prune fabtasks
 
 include entry-points.ini
 include requirements.txt
+
+recursive-include frinat *.html *.css *.js *.png
 
 graft docs
 prune docs/_build
