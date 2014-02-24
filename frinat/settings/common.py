@@ -10,7 +10,7 @@ PROJECT_BASE = os.path.dirname(DJANGO_BASE)
 
 
 class DebugFlags(Configuration):
-    DEBUG = values.BooleanValue(True)
+    DEBUG = values.BooleanValue(False)
 
     @property
     def MEDIA_DEBUG(self):
@@ -96,6 +96,7 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
     ROOT_URLCONF = 'frinat.urls'
     SECRET_KEY = 'trtzz-r^8-0noo-=eq$lh7328f5)xa7?5-@%99*0f#vp7&w2yw' ###
     WSGI_APPLICATION = 'frinat.wsgi.application'
+    ALLOWED_HOSTS = ['.fribourg-natation.ch', 'dev',]
 
     # Broken links
     APPEND_SLASH = True
@@ -226,3 +227,38 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
     #SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
     #SESSION_EXPIRE_AT_BROWSER_CLOSE = True
     #SESSION_COOKIE_SECURE = True
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'verbose': {
+                'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+            },
+            'simple': {
+                'format': '%(levelname)s %(message)s'
+            },
+        },
+        'handlers': {
+            'null': {
+                'level': 'DEBUG',
+                'class': 'logging.NullHandler',
+            },
+            'console':{
+                'level': 'DEBUG',
+                'class': 'logging.StreamHandler',
+                'formatter': 'simple'
+            },
+            'mail_admins': {
+                'level': 'ERROR',
+                'class': 'django.utils.log.AdminEmailHandler',
+            }
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'propagate': True,
+                'level': 'INFO',
+            },
+        }
+    }
