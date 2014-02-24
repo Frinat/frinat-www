@@ -1,0 +1,17 @@
+Django==1.5.5
+Pillow==2.3.0
+South==0.8.4
+dj-database-url==0.2.2
+django-classy-tags==0.4
+django-configurations==0.8
+django-cms==2.4.3
+django-mptt==0.5.2
+django-reversion==1.7.1
+django-schedule-frinat==0.6
+django-sekizai==0.7
+django-tinymce==1.5.2
+html5lib==0.999
+psycopg2==2.5.2
+python-dateutil==1.5
+six==1.5.2
+vobject==0.6.6
