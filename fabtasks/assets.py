@@ -1,5 +1,4 @@
 import os
-from livereload import Server
 from fabric.api import task, local, env
 
 
@@ -31,6 +30,8 @@ def compile_scripts():
 
 @task
 def livereload():
+    from livereload import Server
+
     url = 'http://dev:35729/livereload.js'
     print (
         'To livereload your web pages add the following script tag to '
