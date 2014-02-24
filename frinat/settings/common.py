@@ -180,6 +180,7 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
         'mptt',
         'menus',
         'sekizai',
+        'tinymce',
 
         # CMS plugins
         'cms.plugins.text',
@@ -192,35 +193,20 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
         # Specific apps
         'frinat.frontend',
         'schedule',
-        #'tinymce',
         'frinat.sponsors',
         'frinat.calendar',
-        #'frinat.people',
-        #'filebrowser',
 
-        # Deprecated
-        #'tagging',
-        #'zinnia',
-        #'zinnia.plugins',
+        #'filebrowser',
     )
 
-    # Editor configuration
-    @property
-    def TINYMCE_JS_URL(self):
-        return os.path.join(self.MEDIA_URL, 'scripts', 'tiny_mce', 'tiny_mce.js')
-
-    @property
-    def TINYMCE_JS_ROOT(self):
-        return os.path.join(self.MEDIA_ROOT, 'scripts', 'tiny_mce')
-
     TINYMCE_DEFAULT_CONFIG = {
-        'width': 600,
-        'height': 400,
-        'plugins': "table,spellchecker,paste,searchreplace",
-        'theme': "advanced",
-        'theme_advanced_toolbar_location' : "top",
-        'theme_advanced_toolbar_align' : "left",
-        'theme_advanced_buttons3_add' : "tablecontrols",
+        'width': '100%',
+        'height': 600,
+        'plugins': 'table,spellchecker,paste,searchreplace',
+        'theme': 'advanced',
+        'theme_advanced_toolbar_location': 'top',
+        'theme_advanced_toolbar_align': 'left',
+        'theme_advanced_buttons3_add': 'tablecontrols',
     }
 
     # Sessions###
