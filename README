@@ -1,0 +1,29 @@
+fribourg-natation.ch
+====================
+
+
+Deployment of a new revision
+----------------------------
+
+To deploy a new revision to the webfaction account follow these steps:
+
+ 1. Make sure to be in the development environment (e.g. `frinat-dev`)
+
+       workon frinat-dev
+
+ 2. Run the `deploy` fabric task
+
+       fab deploy
+
+ 3. Check that everything runs fine
+
+       fab browse
+
+ 4. If everything is ok, promote the newly deployed instance to production
+
+       fab promote
+
+ 5. When ready, remove the old instance
+
+       fab list_instances
+       fab destroy:<old-revision>
