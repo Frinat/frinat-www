@@ -302,6 +302,10 @@ class RevisionApp(object):
         self._log('Destroying app...')
         self.api.delete_app(appname)
 
+        line = self.api.system('crontab -l | grep {}'.format(appname)).strip()
+        if line:
+            self.api.delete_cronjob(line)
+
     def browse(self):
         local('zsh -ic "open http://{}"'.format(self.fqdn))
 
