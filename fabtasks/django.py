@@ -10,8 +10,8 @@ def runcmd(*args):
     )
     args = [quote(a) for a in args]
 
-    database = 'postgres://{}:{}@fribourg-natation.ch/{}'.format(env.webfaction_db_user, env.webfaction_db_pwd, env.webfaction_db_name)
-    database = 'postgres://frinat:frinat12345@localhost/frinat'
+    database = 'postgres://{}:{}@fribourg-natation.ch/{}'.format(
+        env.db_user, env.db_pwd, env.db_name)
 
     with shell_env(DATABASE_URL=database, DJANGO_DEBUG='yes'):
         local('./manage.py {}'.format(' '.join(args)))
