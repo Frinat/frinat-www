@@ -1,4 +1,6 @@
 from fabric.api import task, local, shell_env, env
+from fabric.state import output
+
 from pipes import quote
 
 
@@ -10,12 +12,28 @@ def runcmd(*args):
     )
     args = [quote(a) for a in args]
 
+    with shell_env(**_env()):
+        local('./manage.py {}'.format(' '.join(args)))
+
+
+def _env():
     database = 'postgres://{}:{}@localhost/{}'.format(env.db_user, env.db_pwd,
                                                       env.db_name)
+    return {
+        'DATABASE_URL': database,
+        'DJANGO_SECRET_KEY': env.secret_key,
+        'DJANGO_DEBUG': 'yes'
+    }
 
-    with shell_env(DATABASE_URL=database, DJANGO_DEBUG='yes',
-                   DJANGO_SECRET_KEY=env.secret_key):
-        local('./manage.py {}'.format(' '.join(args)))
+
+@task(name='env')
+def getenv():
+    """
+    Call in this way: fab -H running env | source /dev/stdin
+    """
+    output['status'] = False
+    for k, v in sorted(_env().items()):
+        print 'export {}={}'.format(k, quote(v))
 
 
 @task
