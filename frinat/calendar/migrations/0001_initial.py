@@ -7,7 +7,7 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
+
         # Adding model 'MonthCalendarPlugin'
         db.create_table('cmsplugin_monthcalendarplugin', (
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
@@ -25,7 +25,7 @@ class Migration(SchemaMigration):
 
 
     def backwards(self, orm):
-        
+
         # Deleting model 'MonthCalendarPlugin'
         db.delete_table('cmsplugin_monthcalendarplugin')
 

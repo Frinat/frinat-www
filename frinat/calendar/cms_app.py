@@ -5,6 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 
 class CalendarHook(CMSApp):
     name = _("Calendar")
-    urls = ["frinat.calendar.urls"]
+    urls = ["frinat.calendar.urls.frontend"]
 
 apphook_pool.register(CalendarHook)

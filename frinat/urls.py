@@ -15,6 +15,9 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^calendar/accounts/', include('frinat.calendar.urls.oauth',
+                                        namespace='calendar_oauth',
+                                        app_name='calendar_oauth')),
     url(r'^', include('cms.urls')),
 )
 

@@ -36,9 +36,9 @@ class CMSConfig(object):
         'content': {
             'plugins': (
                 'TextPlugin', 'PicturePlugin', 'FilePlugin', 'SnippetPlugin',
-                'LinkPlugin', 'MapPlugin', 'CMSCalendarMonthPlugin',
-                'CMSLatestEntriesPlugin', 'CMSSelectedEntriesPlugin',
-                'CMSSelectedPeoplePlugin', 'CMSPeopleGroupPlugin'
+                'LinkPlugin', 'MapPlugin',
+                'CMSCalendarMonthPlugin',
+                'CMSGoogleCalendarPlugin',
             ),
         },
         'sidebar': {
@@ -95,6 +95,8 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
     SITE_ID = 1
     ROOT_URLCONF = 'frinat.urls'
     SECRET_KEY = values.SecretValue()
+    GOOGLE_API_ID = values.SecretValue()
+    GOOGLE_API_SECRET = values.SecretValue()
     WSGI_APPLICATION = 'frinat.wsgi.application'
     ALLOWED_HOSTS = ['.fribourg-natation.ch', 'dev']
 
