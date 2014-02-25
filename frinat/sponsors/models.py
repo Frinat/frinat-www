@@ -1,5 +1,5 @@
-import os
 import time
+from os.path import join
 
 from django.db import models
 from cms.models import CMSPlugin
@@ -17,7 +17,7 @@ def sponsor_path(instance, filename):
 
     id = int(time.time() * 1000 * 100)
 
-    return os.path.join('assets', 'sponsors', 'sponsor-{0}.{1}'.format(id, ext))
+    return join('assets', 'sponsors', 'sponsor-{0}.{1}'.format(id, ext))
 
 
 class Sponsor(models.Model):

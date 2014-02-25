@@ -195,7 +195,8 @@ class RevisionApp(object):
         appname = self.appname
         build_name = 'frinat_www-0.1.0-py27-none-any.whl'
         port = self.api.system(
-            'grep Listen /home/frinat/webapps/{}/apache2/conf/httpd.conf'.format(self.appname)
+            'grep Listen /home/frinat/webapps/{}/apache2/conf/httpd.conf'
+            .format(self.appname)
         ).strip().split(' ', 1)[1]
 
         # Build distribution
@@ -209,13 +210,17 @@ class RevisionApp(object):
 
         # Create and setup virtualenv
         self._log('Creating virtualenv...')
-        run('/home/frinat/bin/virtualenv-2.7 --python=/usr/local/bin/python2.7 /home/frinat/webapps/{}'.format(appname))
+        run('/home/frinat/bin/virtualenv-2.7 --python=/usr/local/bin/python2.7'
+            ' /home/frinat/webapps/{}'.format(appname))
         run('/home/frinat/webapps/{}/bin/pip install wheel'.format(appname))
 
         # Install package and dependencies
         self._log('Installing dependencies...')
-        run('/home/frinat/webapps/{}/bin/pip install --no-index -I -f /home/frinat/wheelhouse /home/frinat/webapps/{}/{}'.format(appname, appname, build_name))
-        put('manage.py', '/home/frinat/webapps/{}/bin/manage.py'.format(appname))
+        run('/home/frinat/webapps/{}/bin/pip install --no-index -I -f '
+            '/home/frinat/wheelhouse /home/frinat/webapps/{}/{}'
+            .format(appname, appname, build_name))
+        put('manage.py', '/home/frinat/webapps/{}/bin/manage.py'
+            .format(appname))
 
         # Configure webserver
         self._log('Configuring webserver...')
@@ -229,7 +234,8 @@ class RevisionApp(object):
             env.webfaction_db_name,
         ))
         self._setopt('DJANGO_MEDIA_ROOT', '/home/frinat/webapps/frinat_media')
-        self._setopt('DJANGO_STATIC_ROOT', '/home/frinat/webapps/frinat_static')
+        self._setopt('DJANGO_STATIC_ROOT',
+                     '/home/frinat/webapps/frinat_static')
         self._setopt('LD_LIBRARY_PATH',
                      '/home/frinat/webapps/{}/apache2/lib'.format(appname))
 
@@ -250,14 +256,16 @@ class RevisionApp(object):
 
     def _restart(self):
         self._log('Restarting webserver...')
-        self._log(
-            run('/home/frinat/webapps/{}/apache2/bin/restart'.format(self.appname))
-        )
+        self._log(run('/home/frinat/webapps/{}/apache2/bin/restart'
+                      .format(self.appname)))
 
     def _run_django(self, *cmd):
         envdir = '/home/frinat/bin/envdir'
         confdir = '/home/frinat/webapps/{}/conf'.format(self.appname)
-        executable = '/home/frinat/webapps/{0}/bin/python /home/frinat/webapps/{0}/bin/manage.py'.format(self.appname)
+        executable = (
+            '/home/frinat/webapps/{0}/bin/python '
+            '/home/frinat/webapps/{0}/bin/manage.py'.format(self.appname)
+        )
         args = [pipes.quote(c) for c in cmd] + [
             '--settings=frinat.settings',
             '--configuration=Config',
@@ -314,7 +322,7 @@ def list_instances():
     if apps:
         for i, app in enumerate(apps):
             print ' {}. {} {}'.format(i + 1, app.revision,
-                                    '*' if app.is_active else '')
+                                      '*' if app.is_active else '')
     else:
         print 'No instances found.'
 

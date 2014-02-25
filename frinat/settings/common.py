@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
-import os
+from os.path import dirname, join
 
 from configurations import Configuration, values
 
 gettext = lambda s: s
 
-DJANGO_BASE = os.path.dirname(os.path.dirname(__file__))
-PROJECT_BASE = os.path.dirname(DJANGO_BASE)
+DJANGO_BASE = dirname(dirname(__file__))
+PROJECT_BASE = dirname(DJANGO_BASE)
 
 
 class DebugFlags(Configuration):
@@ -71,10 +71,10 @@ class BackingServices(object):
 
 
 class AssetsConfig(object):
-    MEDIA_ROOT = values.PathValue(os.path.join(PROJECT_BASE, '_dev', 'media'))
+    MEDIA_ROOT = values.PathValue(join(PROJECT_BASE, '_dev', 'media'))
     MEDIA_URL = values.Value('/media/')
 
-    STATIC_ROOT = values.PathValue(os.path.join(PROJECT_BASE, '_dev', 'static'))
+    STATIC_ROOT = values.PathValue(join(PROJECT_BASE, '_dev', 'static'))
     STATIC_URL = values.Value('/static/')
 
     STATICFILES_FINDERS = (
@@ -96,10 +96,11 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
     ROOT_URLCONF = 'frinat.urls'
     SECRET_KEY = 'trtzz-r^8-0noo-=eq$lh7328f5)xa7?5-@%99*0f#vp7&w2yw' ###
     WSGI_APPLICATION = 'frinat.wsgi.application'
-    ALLOWED_HOSTS = ['.fribourg-natation.ch', 'dev',]
+    ALLOWED_HOSTS = ['.fribourg-natation.ch', 'dev']
 
     # Broken links
     APPEND_SLASH = True
+
     @property
     def SEND_BROKEN_LINK_EMAILS(self):
         return not self.DEBUG
@@ -230,7 +231,7 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
                 'level': 'DEBUG',
                 'class': 'logging.NullHandler',
             },
-            'console':{
+            'console': {
                 'level': 'DEBUG',
                 'class': 'logging.StreamHandler',
                 'formatter': 'simple'
