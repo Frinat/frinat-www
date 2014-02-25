@@ -1,20 +1,23 @@
-from os.path import join, dirname
+from os.path import join, dirname, exists
 from glob import glob
 from fabric.api import env
 
 
-env.package_name = 'frinat'
-env.user = ''
-env.hosts = [
-
-]
-
-# Assets pipeline configuration (may not be needed if the project does not
-# make use of assets and/or static files for web development)
-env.assets_dir = join(env.package_name, 'assets')
-env.static_dir = join(env.package_name, 'static')
-env.templates_dir = join(env.package_name, 'templates')
+def sibling(*args):
+    return join(dirname(__file__), *args)
 
 
-for f in glob(join(dirname(__file__), 'fabtasks', '*.py')):
+def loadenv(path):
+    if not exists(path):
+        return
+    gl = {}
+    execfile(path, gl)
+    for k, v in gl.iteritems():
+        if not k.startswith('_'):
+            setattr(env, k, v)
+
+
+loadenv(sibling('fabenv.py'))
+
+for f in glob(sibling('fabtasks', '*.py')):
     execfile(f)
