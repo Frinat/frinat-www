@@ -324,8 +324,14 @@ def reqs():
 
 @task
 def list_instances():
+    rev = get_current_revision()
     api = WebfactionAPI(env.webfaction_username, env.webfaction_password)
     apps = list(RevisionApp.iterall(api))
+
+    print
+    print 'Current revision: {}'.format(rev)
+    print
+    print 'Deployed instances:'
 
     if apps:
         for i, app in enumerate(apps):
