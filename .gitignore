@@ -29,4 +29,9 @@ docs/_build
 # Generated static files (if any)
 /frinat/static/styles
 /frinat/static/scripts/master.js
+
+# Development files
 /_dev
+
+# Local configuration
+fabenv.py
