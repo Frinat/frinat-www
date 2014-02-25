@@ -302,6 +302,9 @@ class RevisionApp(object):
         self._log('Destroying app...')
         self.api.delete_app(appname)
 
+    def browse(self):
+        local('zsh -ic "open http://{}"'.format(self.fqdn))
+
 
 @task
 def reqs():
@@ -345,6 +348,7 @@ class RevisionMethodCaller(object):
         return method(*args, **kwargs)
 
 
+browse = RevisionMethodCaller.build('browse')
 promote = RevisionMethodCaller.build('promote')
 collectstatic = RevisionMethodCaller.build('collectstatic')
 fixdb = RevisionMethodCaller.build('fixdb')
