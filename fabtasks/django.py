@@ -13,7 +13,8 @@ def runcmd(*args):
     database = 'postgres://{}:{}@localhost/{}'.format(env.db_user, env.db_pwd,
                                                       env.db_name)
 
-    with shell_env(DATABASE_URL=database, DJANGO_DEBUG='yes'):
+    with shell_env(DATABASE_URL=database, DJANGO_DEBUG='yes',
+                   DJANGO_SECRET_KEY=env.secret_key):
         local('./manage.py {}'.format(' '.join(args)))
 
 

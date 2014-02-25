@@ -233,6 +233,7 @@ class RevisionApp(object):
             env.webfaction_db_pwd,
             env.webfaction_db_name,
         ))
+        self._setopt('DJANGO_SECRET_KEY', env.production_secret_key)
         self._setopt('DJANGO_MEDIA_ROOT', '/home/frinat/webapps/frinat_media')
         self._setopt('DJANGO_STATIC_ROOT',
                      '/home/frinat/webapps/frinat_static')

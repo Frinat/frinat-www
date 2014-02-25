@@ -94,7 +94,7 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
     # Site identity and basic configuration
     SITE_ID = 1
     ROOT_URLCONF = 'frinat.urls'
-    SECRET_KEY = 'trtzz-r^8-0noo-=eq$lh7328f5)xa7?5-@%99*0f#vp7&w2yw' ###
+    SECRET_KEY = values.SecretValue()
     WSGI_APPLICATION = 'frinat.wsgi.application'
     ALLOWED_HOSTS = ['.fribourg-natation.ch', 'dev']
 
