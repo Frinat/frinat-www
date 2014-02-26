@@ -1,4 +1,4 @@
-{% load calendar %}
+{% load calendar markup %}
 
 <h1>Calendrier pour {{ date|date:"F Y" }}</h1>
 
@@ -83,18 +83,44 @@
 </nav>
 {% endif %}
 
-<ul>
+{% if display_details %}
+<ul class="event-details">
 {% for o in month.events %}
-	<li id="{{ o.event.id }}">
-		<h2>{{ o.event.title }}</h2>
+	<li id="{{ o.event.id }}" class="event {% if o.event.location %}location-available{% endif %} {% if o.event.description %}description-available{% endif %}">
+	<h2>{{ o.event.title }}</h2>
+
+		{% if o.event.location %}
+		<div class="location-map">
+			<a href="{{ o.event.location_map_url }}">
+				<img src="{{ o.event.location_map_image_url }}"/>
+			</a>
+		</div>
+		{% endif %}
+
 		<dl>
 			<dt>Date</dt>
-			<dd>{{ o.event.start|date:"d/m/Y" }}</dd>
+			<dd>{{ o.event.start|date:"l j"|capfirst }}</dd>
 			<dt>Time</dt>
-			<dd>{{ o.event.start|time:"G:i" }}</dd>
+			{% if o.event.isallday %}
+				<dd class="time">
+					Toute la journée {% if not o.event.issingleday %}<span>jusqu'au</span> {{ o.event.end|date:"l j" }}{% endif %}
+				</dd>
+			{% else %}
+				<dd class="time">
+					{{ o.event.start|time:"G\hi" }} <span>jusqu'à</span> {{ o.event.end|time:"G\hi" }}
+					{% if not o.event.issingleday %}<span>du</span> {{ o.event.end|date:"l j" }}{% endif %}
+				</dd>
+			{% endif %}
+			{% if o.event.location %}
+				<dt>Location</dt>
+				<dd>{{ o.event.location_label }}</dd>
+				{% endif %}
 		</dl>
-		{{ o.event.location|default:'' }}
-		{{ o.event.description|default:'' }}
+
+		{% if o.event.description %}
+			<div class="description">{{ o.event.description|markdown }}</div>
+		{% endif %}
 	</li>
 {% endfor %}
 </ul>
+{% endif %}

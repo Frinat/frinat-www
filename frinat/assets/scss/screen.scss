@@ -1,0 +1,118 @@
+@import "compass";
+@import "defines";
+@import "colors";
+
+@include global-reset;
+@include reset-html5;
+
+body {
+  padding: 2em;
+  background-color: #4a5c6e;
+  font-family: Arial;
+  font-size: 12px;
+  overflow-y: scroll;
+}
+
+body > header {
+  @include content-wrapper;
+  @include clearfix;
+  h1 {
+    @include float-left;
+    a {
+      display: block;
+      text-indent: -1000em;
+      width: 268px;
+      height: 89px;
+      background: url(../images/logo.png) no-repeat;
+    }
+  }
+  form {
+    @include float-right;
+    display: none;
+    input[type=search] {
+      width: 200px;
+    }
+    p:nth-child(2) {
+      width: 200px;
+      text-align: right;
+      padding-top: 0.3em;
+      font-size: 0.9em;
+    }
+    a {
+      text-decoration: none;
+      color: #a5b7ca;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+body.full > section {
+  @include border-bottom-left-radius(0);
+  > section {
+    width: $body_width;
+  }
+}
+
+body > section {
+  @include content-wrapper;
+  @include clearfix;
+  @include border-bottom-left-radius(10px);
+  clear: both;
+  > section {
+    @include content;
+    background: white;
+    padding-bottom: 10002em;
+    margin-bottom: -10000em;
+  }
+  > aside {
+    @include sidebar;
+    @include border-bottom-left-radius(10px);
+    margin-bottom: 10px;
+    margin-top: 12px;
+    background-color: #e6ecf3;
+    background-image: url(../images/sidebar-shadow.png);
+    background-image: -webkit-gradient(linear, left top, left 150, from(rgba(191, 207, 225, 0.4)), color-stop(15%, rgba(130, 162, 191, 0.4)), to(rgba(191, 207, 225, 0.4))), url(../images/sidebar-shadow.png);
+    // Add mozilla
+    background-position: top left, top right;
+    background-repeat: repeat-y;
+    border: 1px solid white;
+    border-right: 0;
+    h1 {
+      text-align: right;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-shadow: 0 1px 0 white;
+      padding: 0.8em 20px;
+      margin-top: 1.5em;
+      color: rgba(93, 117, 140, 0.8) !important;
+      color: #5d758c;
+      a {
+        color: rgba(93, 117, 140, 0.8) !important;
+        color: #5d758c;
+        text-decoration: none;
+      }
+    }
+    #sponsors {
+      @include separator;
+      margin-bottom: 4em;
+      a {
+        display: block;
+        text-align: center;
+        padding: 1.3em;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+          color: #12283d;
+        }
+      }
+    }
+  }
+}
+
+@import "main-navigation";
+@import "sidebar-navigation";
+@import "footer";
+@import "body";
+
+@import "calendar";

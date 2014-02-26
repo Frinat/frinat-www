@@ -1,0 +1,126 @@
+body > section > section {
+	padding: 2em 35px 10002em;
+	margin-left: -1px;
+	line-height: 1.5em;
+
+	h1 {
+		font-size: 2em;
+		margin: 1em 0;
+		color: #ee4912;
+		font-weight: normal;
+		&:first-child {
+		margin-top: 0.3em;
+		}
+	}
+
+	h2 {
+		color: #cd3813;
+		font-weight: normal;
+		font-size: 1.6em;
+		margin: 1em 0;
+	}
+
+	h3 {
+		color: #b30400;
+		font-weight: normal;
+		font-size: 1.3em;
+		margin: 1em 0;
+	}
+
+	h4 {
+		color: #93332a;
+		font-weight: bold;
+		font-size: 1.1em;
+		margin: 1em 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		a {
+		color: inherit;
+		text-decoration: none;
+		&:after {
+			content: " ¶";
+			color: #aaaaaa;
+			font-size: 0.8em;
+			vertical-align: 17%;
+			visibility: hidden;
+		}
+		&:hover {
+			background: none;
+		}
+		&:hover:after {
+			visibility: visible;
+		}
+		}
+	}
+
+	hr {
+		border: 0;
+		height: 1px;
+		@include background-image(linear-gradient(left, white, #cccccc 15%, #cccccc 85%, white));
+	}
+
+	a {
+		color: $link-color;
+		&:hover {
+			background: #ffffa9;
+		}
+	}
+
+	a:active {}
+	a:visited {}
+
+	p {
+		margin: 1.5em 0;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	ul, ol {
+		margin: 1.5em 0;
+	}
+
+	ul li {
+		list-style-type: disc;
+	}
+
+	ol li {
+		list-style-type: decimal-leading-zero;
+	}
+
+	table {
+		border: 1px solid #eeeeee;
+		padding: 2px;
+		margin: 1em -14px;
+		caption {
+		padding: 0 13px 4px 14px;
+		font-weight: bold;
+		}
+	}
+
+	.plugin_googlemap > div {
+		height: 300px;
+	}
+
+	td, th {
+		border: 1px solid #cccccc;
+		border-left-width: 0;
+		border-top-width: 0;
+		padding: 5px 10px;
+	}
+
+	td:first-child, th:first-child {
+		border-left-width: 1px;
+	}
+	tr:first-child {
+		th, td {
+		border-top-width: 1px;
+		}
+	}
+}

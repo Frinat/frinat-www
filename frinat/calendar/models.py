@@ -2,7 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.timezone import utc
-
+from datetime import timedelta
+import urllib
 import httplib2
 from cms.models import CMSPlugin
 from schedule.models import Calendar
@@ -26,6 +27,10 @@ class Event(object):
         self.id = data['id']
         self.title = data['summary']
         self.location = data.get('location', None)
+        if self.location:
+            self.location_label = self.location.split(',', 1)[0]
+        else:
+            self.location_label = None
         self.description = data.get('description', None)
 
         if 'date' in data['start']:
@@ -53,6 +58,28 @@ class Event(object):
 
     def __eq__(self, other):
         return self.id == other.id
+
+    @property
+    def location_map_image_url(self):
+        args = {
+            'size': '395x120',
+            'feature': 'road',
+            'visual_refresh': 'true',
+            'markers': 'size:small|color:blue|{}'.format(self.location.encode('utf8')),
+            'sensor': 'false',
+        }
+        query = urllib.urlencode(args)
+        return u'http://maps.googleapis.com/maps/api/staticmap?{}'.format(query)
+
+    @property
+    def location_map_url(self):
+        query = urllib.urlencode({
+            'q': self.location.encode('utf8'),
+        })
+        return 'http://maps.google.com/?{}'.format(query)
+
+    def issingleday(self):
+        return self.end - self.start <= timedelta(days=1)
 
     def isallday(self):
         return self.kind == Event.ALL_DAY

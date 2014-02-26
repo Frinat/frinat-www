@@ -4,13 +4,13 @@ from fabric.api import task, local, env
 
 @task
 def watch_styles():
-    config = os.path.join(env.assets_dir, 'sass', 'config.rb')
+    config = os.path.join(env.assets_dir, 'scss', 'config.rb')
     local('compass watch -c {}'.format(config))
 
 
 @task
 def compile_styles():
-    config = os.path.join(env.assets_dir, 'sass', 'config.rb')
+    config = os.path.join(env.assets_dir, 'scss', 'config.rb')
     local('compass compile -c {}'.format(config))
 
 
