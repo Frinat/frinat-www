@@ -27,8 +27,8 @@ pip-log.txt
 docs/_build
 
 # Generated static files (if any)
-/frinat/static/styles
-/frinat/static/scripts/master.js
+/frinat/frontend/static/styles
+/frinat/frontend/static/scripts/master.js
 
 # Development files
 /_dev
