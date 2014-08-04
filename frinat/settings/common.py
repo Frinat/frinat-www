@@ -163,6 +163,13 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
 
     # Applications
     INSTALLED_APPS = (
+         # Specific apps
+        'frinat.frontend',
+        'schedule',
+        'frinat.sponsors',
+        'frinat.calendar',
+
+        # Django apps
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
@@ -192,12 +199,6 @@ class Config(AssetsConfig, BackingServices, CMSConfig, DebugFlags,
         'cms.plugins.file',
         'cms.plugins.snippet',
         'cms.plugins.googlemap',
-
-        # Specific apps
-        'frinat.frontend',
-        'schedule',
-        'frinat.sponsors',
-        'frinat.calendar',
 
         #'filebrowser',
     )

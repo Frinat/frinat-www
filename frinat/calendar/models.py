@@ -10,6 +10,7 @@ from schedule.models import Calendar
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.django_orm import CredentialsField, Storage
 from apiclient.discovery import build
+from mptt.models import MPTTModel, TreeForeignKey
 
 from dateutil import parser, tz
 
@@ -129,13 +130,45 @@ class Credentials(models.Model):
     credentials = CredentialsField(editable=False)
 
 
-class GoogleCalendar(models.Model):
-    calendar_id = models.CharField(max_length=255, null=False, blank=False)
-    name = models.CharField(max_length=255, null=False, blank=False)
-    account = models.ForeignKey(GoogleAccount, null=False, blank=False)
+
+class Category(MPTTModel):
+    name = models.CharField(max_length=50)
+    order = models.PositiveSmallIntegerField(default=0)
+    parent = TreeForeignKey('self', null=True, blank=True,
+                            related_name='children')
+
+    def path(self):
+        if self.parent:
+            return u'{} / {}'.format(self.parent.path(), self.name)
+        else:
+            return self.name
 
     def __unicode__(self):
-        return u'{} (on {})'.format(self.name, self.account.name)
+        return self.name
+
+    class MPTTMeta:
+        order_insertion_by = ['order']
+
+    class Meta:
+        unique_together = [
+            ('name', 'parent'),
+        ]
+        order_with_respect_to = 'parent'
+        ordering = ['order']
+
+
+class GoogleCalendar(models.Model):
+    name = models.CharField(max_length=255, null=False, blank=False)
+    category = models.ForeignKey(Category, null=False, blank=False)
+    order = models.PositiveSmallIntegerField(default=0)
+    account = models.ForeignKey(GoogleAccount, null=False, blank=False)
+    calendar_id = models.CharField(max_length=255, null=False, blank=False)
+
+    def __unicode__(self):
+        return self.name
+
+    def full_name(self):
+        return u'{} / {}'.format(self.category.path(), self.name)
 
     def get_events(self, start=None, end=None):
         credentials = self.account.credentials
@@ -164,6 +197,9 @@ class GoogleCalendar(models.Model):
         for e in events:
             if e['status'] == 'confirmed':
                 yield Event(self, e)
+
+    class Meta:
+        ordering = ['order']
 
 
 class GoogleCalendarPlugin(CMSPlugin):

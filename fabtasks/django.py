@@ -19,7 +19,7 @@ def runcmd(*args):
 @task(name='env')
 def getenv():
     """
-    Call in this way: fab -H running env | source /dev/stdin
+    Call in this way: fab --hide running env | source /dev/stdin
     """
     output['status'] = False
     for k, v in sorted(env.django_env.items()):

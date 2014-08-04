@@ -37,14 +37,36 @@ class CMSCalendarMonthPlugin(CMSPluginBase):
 plugin_pool.register_plugin(CMSCalendarMonthPlugin)
 
 
+from django.forms import ModelForm, ModelMultipleChoiceField
+from django.contrib.admin.widgets import FilteredSelectMultiple
+
+class CalendarsSelectionField(ModelMultipleChoiceField):
+    def label_from_instance(self, obj):
+        return obj.full_name()
+
+
+class CalendarsSelectionForm(ModelForm):
+    calendars_to_display = CalendarsSelectionField(
+        queryset=models.GoogleCalendar.objects,
+        widget=FilteredSelectMultiple(
+            verbose_name='Calendars',
+            is_stacked=True,
+        )
+    )
+
+    class Meta:
+        model = models.GoogleCalendarPlugin
+
+
 class CMSGoogleCalendarPlugin(CMSPluginBase):
     model = models.GoogleCalendarPlugin
-    name = _("Google calendar")
-    render_template = "calendar/month.html"
+    name = _('Google calendar')
+    render_template = 'calendar/month.html'
+
+    form = CalendarsSelectionForm
+    filter_horizontal = ['calendars_to_display']
 
     def render(self, context, instance, placeholder):
-        from schedule.periods import weekday_names
-
         date = context.get('date', now())
 
         event_list = []
@@ -58,7 +80,6 @@ class CMSGoogleCalendarPlugin(CMSPluginBase):
             'events': event_list,
             'month': period,
             'calendar': instance.calendars_to_display.all(),
-            #'weekday_names': weekday_names,
             'display_details': True,
         })
 
